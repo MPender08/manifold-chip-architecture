@@ -61,4 +61,3 @@ Note: To see the purely biological foundations of the Curvature Adaptation Hypot
 
 https://github.com/MPender08/dendritic-curvature-adaptation
 
-The Metabolic Phase Transition: https://doi.org/10.5281/zenodo.18655523
