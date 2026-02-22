@@ -57,7 +57,8 @@ LOCKED_SEED = 137
 ## Documentation
 For the complete mathematical framework, structural blueprints, and thermodynamic proofs, please see the full manuscript included in this repository: manifold_chip.pdf.
 
-(Note: To see the purely biological foundations of the Curvature Adaptation Hypothesis that inspired this hardware, visit my companion repository: 
+Note: To see the purely biological foundations of the Curvature Adaptation Hypothesis that inspired this hardware, visit my companion repository: 
 
 https://github.com/MPender08/dendritic-curvature-adaptation
 
+The Metabolic Phase Transition: https://doi.org/10.5281/zenodo.18655523
