@@ -6,6 +6,10 @@ Current artificial intelligence architectures, executing on standard GPUs and TP
 
 This project simulates a hardware-level solution: an analog chip that dynamically optimizes its own geometric curvature to match the complexity of the data, achieving theoretical energy scaling well below traditional Euclidean bounds.
 
+Here's a link to the Zenodo pre-print of the manuscript included in this repository:
+
+https://doi.org/10.5281/zenodo.18717807
+
 ### Core Architecture
 The simulation translates biological Somatostatin (SST) and Vasoactive Intestinal Peptide (VIP) interneuron gating into analog silicon mechanisms:
 
