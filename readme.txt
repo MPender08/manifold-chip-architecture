@@ -1,7 +1,7 @@
 Installation & Usage
 =========================
 
-To run the simulation and generate the phase transition graphs or the decision boundary comparison yourself, you will need Python and a few dependencies.
+To run the simulation and generate the visuals, you will need Python and a few dependencies.
 
 	1. Install the required libraries: This project relies on torch and geoopt (for Riemannian optimization and hyperbolic manifolds).
 
@@ -23,4 +23,5 @@ If you'd like to try it with your own seeds, or random seeds, use these settings
 	# The seed for the visual used in the README.me is 137
 	    USE_LOCKED_SEED = True
 	    LOCKED_SEED = 137
+
 
