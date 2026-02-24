@@ -57,6 +57,10 @@ LOCKED_SEED = 137
 ## Documentation
 For the complete mathematical framework, structural blueprints, and thermodynamic proofs, please see the full manuscript included in this repository: manifold_chip.pdf.
 
+GAP is a biologically plausible learning algorithm designed for the Dynamically Gated Analog Crossbars (DGAC):
+
+https://github.com/MPender08/Geometry-Aware-Plasticity
+
 Note: To see the purely biological foundations of the Curvature Adaptation Hypothesis that inspired this hardware, visit my companion repository: 
 
 https://github.com/MPender08/dendritic-curvature-adaptation
