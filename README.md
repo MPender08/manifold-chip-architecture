@@ -27,6 +27,8 @@ As seen in the generated visualization:
 2. **The Hyperbolic Plunge:** The network curvature ($\gamma_{net}$) is forced completely open to create necessary hierarchical geodesics.
 3. **The Attention Span:** The injected VIP signal spikes exactly when learning stalls, and gracefully decays once the problem is solved, perfectly minimizing the thermodynamic tax.
 
+![Manifold Chip Phase Transition](manifold_phase_transition.png)
+
 ---
 
 ## Installation & Usage
@@ -37,11 +39,11 @@ To run the simulation and generate the phase transition graphs yourself, you wil
    ```bash
    pip install torch matplotlib geoopt numpy
    ```
-2. **Run the simulation:**
+2. **Run the simulations:**
    ```bash
    python run_brain_sim.py
+   python manifold_chip_dynamics.py
    ```
-This will reproduce the 3-panel visualization shown above.
 
 ### Seed Control
 
