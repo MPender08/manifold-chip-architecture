@@ -1,0 +1,51 @@
+* Manifold Chip: DGAC SST-Gate Phase Transition Simulation
+* Translating the Metabolic Phase Transition into Silicon
+
+* 1. THE SOMATIC INPUT (40Hz Spikes)
+* Generating a 40Hz square wave from -5V to +5V to match the Python script.
+V_somatic n_in 0 PULSE(-5 5 0 1u 1u 12.5m 25m)
+
+* 2. THE LOCAL LEAKY INTEGRATOR (RC Circuit)
+* Accumulates incoming current to serve as a proxy for representational density.
+* R = 1k Ohm, C = 10uF (Time constant = 10ms)
+R_int n_in n_rc 1k
+C_int n_rc 0 10u
+
+* 3. THE HYSTERETIC SHIELD (Schmitt Trigger)
+* Protects against thermal noise by enforcing hysteresis.
+* Standard linear VCVS with gain of 1,000,000
+E_comp n_gate_raw 0 n_ref n_rc 1Meg
+
+* NGSpice Behavioral Source to limit output to +/- 15V (Op-Amp rails)
+B_limit n_gate 0 V=min(15, max(-15, v(n_gate_raw)))
+
+* Positive feedback resistor network (R1 and R2) sets the threshold (Vth)
+* If output is +/-15V, a 9k/1k voltage divider perfectly hits +/- 1.5V.
+R1 n_gate n_ref 9k
+R2 n_ref 0 1k
+
+* 4. THE SST GATE (Analog Shunt FET)
+* This is the biophysical actuator translated to silicon. 
+* It connects the 'Apical' contextual array to the ground plane.
+V_apical_dummy n_apical_source 0 DC 5
+R_apical n_apical_source n_apical 10k
+
+* The N-Channel MOSFET (SST Transistor)
+* When n_gate is 15V, the shunt is CLOSED (Euclidean State, current dumped to ground).
+* When n_gate is -15V, the shunt is OPEN (Hyperbolic State, current forced into integration node).
+M_SST n_apical n_gate 0 0 NMOD
+.model NMOD NMOS(Level=1 VTO=2.0 KP=0.05)
+
+* 5. SIMULATION COMMANDS
+* Running a transient analysis for 150ms to match the Python simulation window.
+.tran 100u 150m
+.control
+run
+* Plot the local voltage against the input spikes
+plot v(n_in) v(n_rc) title 'Somatic Spikes vs RC Integration'
+* Plot the SST Shunt Gate State
+plot v(n_gate) title 'SST Gate State (Hysteretic Transition)'
+* Plot the Apical current shunt behavior
+plot v(n_apical) title 'Apical Voltage (Topological Switch)'
+.endc
+.end
