@@ -27,7 +27,7 @@ As seen in the generated visualization:
 2. **The Hyperbolic Plunge:** The network curvature ($\gamma_{net}$) is forced completely open to create necessary hierarchical geodesics.
 3. **The Attention Span:** The injected VIP signal spikes exactly when learning stalls, and gracefully decays once the problem is solved, perfectly minimizing the thermodynamic tax.
 
-![Manifold Chip Phase Transition](manifold_phase_transition.png)
+![Manifold Transient Analysis](manifold_transient_analysis.png)
 
 ---
 
